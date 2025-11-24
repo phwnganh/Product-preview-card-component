@@ -21,15 +21,21 @@ body {
   display: flex;
 }
 
-.container .container-image {
-  flex-basis: 50%;
+.container .container-image-desktop {
   width: 50%;
+  border-radius: 12px 0 0 12px;
+}
+
+.container .container-image-mobile {
+  display: none;
 }
 
 .container .container-info {
   width: 50%;
-  flex-basis: 50%;
-  margin: 32px 32px 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 20px;
 }
 
 .container-info .info-type {
@@ -42,22 +48,25 @@ body {
 .container-info .info-title {
   font-weight: 700;
   font-family: "Fraunces";
-  font-size: 44px;
-  line-height: 100%;
-  margin: 16px 16px 16px 0;
+  font-size: 40px;
+  line-height: 1;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .container-info .info-description {
   font-family: "Montserrat";
   color: hsl(228, 12%, 48%);
   font-size: 14px;
-  line-height: 160%;
-  margin: 16px 16px 16px 0;
+  line-height: 1.6;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .info-price {
   display: flex;
   align-items: center;
+  gap: 12px;
 }
 
 .info-price .price {
@@ -65,7 +74,6 @@ body {
   font-family: "Fraunces";
   font-size: 44px;
   color: hsl(158, 36%, 37%);
-  margin: 16px 16px 16px 0;
 }
 
 .info-price .discount {
@@ -86,9 +94,62 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 16px;
 }
 
 .add-to-cart-btn img {
   margin-right: 8px;
+}
+
+.add-to-cart-btn:hover{
+      cursor: pointer;
+      background-color: hsl(158, 42%, 18%);
+}
+
+@media (max-width: 375px) {
+  body {
+    padding: 12px 0 24px 0;
+  }
+  .container {
+    flex-direction: column;
+    width: 90%;
+    max-width: 375px;
+    margin: 0 auto;
+  }
+
+  .container .container-image-mobile {
+    width: 100%;
+    display: block;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .container .container-image-desktop {
+    display: none;
+  }
+
+  .container .container-info {
+    width: 100% !important; /* hoặc chỉ width: 100%; */
+    padding: 20px 20px; /* tăng padding một chút cho mobile trông thoáng hơn */
+    gap: 16px; /* giảm gap xuống cho phù hợp mobile */
+  }
+
+  .container-info .info-type {
+    font-size: 8px;
+    letter-spacing: 4px;
+  }
+
+  .container-info .info-title,
+  .info-price .price {
+    font-size: 24px;
+  }
+
+  .info-price .discount,
+  .container-info .info-description {
+    font-size: 8px;
+  }
+
+  .add-to-cart-btn {
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-size: 12px;
+  }
 }
