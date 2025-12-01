@@ -16,7 +16,7 @@ body {
 
 .container {
   background-color: hsl(0, 0%, 100%);
-  width: 700px;
+  max-width: 700px;
   border-radius: 12px;
   display: flex;
 }
@@ -48,7 +48,7 @@ body {
 .container-info .info-title {
   font-weight: 700;
   font-family: "Fraunces";
-  font-size: 40px;
+  font-size: 2rem;
   line-height: 1;
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -57,7 +57,7 @@ body {
 .container-info .info-description {
   font-family: "Montserrat";
   color: hsl(228, 12%, 48%);
-  font-size: 14px;
+  font-size: 1rem;
   line-height: 1.6;
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -72,14 +72,14 @@ body {
 .info-price .price {
   font-weight: 700;
   font-family: "Fraunces";
-  font-size: 44px;
+  font-size: 3rem;
   color: hsl(158, 36%, 37%);
 }
 
 .info-price .discount {
   font-family: "Montserrat";
   color: hsl(228, 12%, 48%);
-  font-size: 14px;
+  font-size: 1rem;
   text-decoration-line: line-through;
 }
 
@@ -105,7 +105,13 @@ body {
       background-color: hsl(158, 42%, 18%);
 }
 
-@media (max-width: 375px) {
+@media (max-width: 768px) {
+  body{
+    padding: 12px;
+  }
+}
+
+@media (max-width: 576px) {
   body {
     padding: 12px 0 24px 0;
   }
@@ -133,7 +139,7 @@ body {
   }
 
   .container-info .info-type {
-    font-size: 8px;
+    font-size: 12px;
     letter-spacing: 4px;
   }
 
@@ -144,7 +150,7 @@ body {
 
   .info-price .discount,
   .container-info .info-description {
-    font-size: 8px;
+    font-size: 12px;
   }
 
   .add-to-cart-btn {
